@@ -9,3 +9,82 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Standard Component Styles */
+@layer components {
+
+    /* Button Styles */
+    .btn-primary {
+        @apply bg-amber-500 hover:bg-amber-600 text-slate-900 px-8 py-3 rounded-lg font-bold transition duration-300;
+    }
+
+    .btn-secondary {
+        @apply border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-slate-900 px-8 py-3 rounded-lg font-bold transition duration-300;
+    }
+
+    .btn-outline {
+        @apply border-2 border-slate-700 text-slate-300 hover:border-amber-500 hover:text-amber-500 px-8 py-3 rounded-lg font-bold transition duration-300;
+    }
+
+    /* Section Styles */
+    .section-dark {
+        @apply bg-slate-900 py-16;
+    }
+
+    .section-darker {
+        @apply bg-slate-800 py-16;
+    }
+
+    .section-hero {
+        @apply bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-24;
+    }
+
+    /* Card Styles */
+    .card {
+        @apply bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-700 transition duration-300;
+    }
+
+    .card-hover {
+        @apply bg-slate-800 rounded-xl shadow-lg p-8 hover:shadow-xl hover:border-amber-500 border border-slate-700 transition duration-300;
+    }
+
+    /* Heading Styles */
+    .heading-xl {
+        @apply text-4xl sm:text-5xl font-bold text-white mb-6;
+    }
+
+    .heading-lg {
+        @apply text-3xl sm:text-4xl font-bold text-white mb-4;
+    }
+
+    .heading-md {
+        @apply text-2xl font-bold text-white mb-3;
+    }
+
+    .heading-sm {
+        @apply text-xl font-bold text-white mb-2;
+    }
+
+    /* Text Styles */
+    .text-muted {
+        @apply text-slate-400;
+    }
+
+    .text-light {
+        @apply text-slate-300;
+    }
+
+    /* Container */
+    .container-custom {
+        @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Icon Container */
+    .icon-circle {
+        @apply rounded-full w-16 h-16 flex items-center justify-center mb-6;
+    }
+
+    .icon-circle-sm {
+        @apply rounded-full w-12 h-12 flex items-center justify-center;
+    }
+}

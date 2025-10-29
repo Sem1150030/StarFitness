@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="bg-slate-900">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @yield('head')
     </head>
-    <body>
-     @yield('content')
+    <body class="bg-slate-900">
+        <livewire:components.navigation.top-navigation />
+        @yield('content')
     </body>
 </html>
