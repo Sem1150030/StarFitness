@@ -23,17 +23,9 @@ class RegisterForm extends Component
 
         try {
             app(AuthService::class)->registerAction($validatedData);
-
-            session()->flash('status', [
-                'type' => 'success',
-                'message' => 'Registration successful! Welcome aboard.',
-            ]);
         }
         catch (\Exception $exception){
-            session()->flash('status', [
-                'type' => 'error',
-                'message' => 'Registration failed: ' . $exception->getMessage(),
-            ]);
+            session()->flash('error', 'Registration failed: ' . $exception->getMessage());
         }
 
     }
