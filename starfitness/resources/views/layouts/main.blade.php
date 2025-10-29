@@ -9,6 +9,24 @@
         @yield('head')
     </head>
     <body class="bg-slate-900">
+    <div id="toast-container" class="fixed top-5 right-5 z-50 space-y-2">
+    @if(session('status'))
+        @php
+            $status = session('status');
+        @endphp
+            <div
+                x-data="{ show: true }"
+                x-init="setTimeout(() => show = false, 3000)"
+                x-show="show"
+                class="px-4 py-2 rounded shadow text-white"
+                :class="{
+                    'bg-green-500': '{{ $status['type'] }}' === 'success',
+                    'bg-red-500': '{{ $status['type'] }}' === 'error'
+                }">
+                {{ $status['message'] }}
+            </div>
+        @endif
+        </div>
         <livewire:components.navigation.top-navigation />
         @yield('content')
     </body>
