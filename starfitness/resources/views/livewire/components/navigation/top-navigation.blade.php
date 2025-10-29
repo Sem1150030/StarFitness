@@ -19,9 +19,18 @@
 
             <!-- CTA Button & Mobile Menu -->
             <div class="flex items-center space-x-4">
-                <a href="#" class="hidden sm:inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-2 rounded-lg font-bold transition duration-300">
-                    Get Started
-                </a>
+                @if($user)
+                    <div class="hidden sm:flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold cursor-pointer hover:bg-amber-600 transition duration-300">
+                            {{ substr($user->name, 0, 1) }}
+                        </div>
+                        <span class="text-white font-semibold">{{ $user->name }}</span>
+                    </div>
+                @else
+                    <a href="{{route('auth.register')}}" class="hidden sm:inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-2 rounded-lg font-bold transition duration-300">
+                        Get Started
+                    </a>
+                @endif
 
                 <!-- Mobile menu button -->
                 <button type="button" class="md:hidden text-slate-300 hover:text-amber-500 transition duration-300" @click="mobileMenuOpen = !mobileMenuOpen">
@@ -41,9 +50,37 @@
             <a href="#" class="block text-slate-300 hover:text-amber-500 transition duration-300 font-semibold py-2">Pricing</a>
             <a href="#" class="block text-slate-300 hover:text-amber-500 transition duration-300 font-semibold py-2">About</a>
             <a href="#" class="block text-slate-300 hover:text-amber-500 transition duration-300 font-semibold py-2">Contact</a>
-            <a href="#" class="block bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-2 rounded-lg font-bold transition duration-300 text-center mt-4">
-                Get Started
-            </a>
+            @if($user)
+                <div class="border-t border-slate-700 pt-4 mt-4">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold">
+                            {{ substr($user->name, 0, 1) }}
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold">{{ $user->name }}</p>
+                            <p class="text-slate-400 text-sm">{{ $user->email }}</p>
+                        </div>
+                    </div>
+                    <a href="#" class="block text-slate-300 hover:text-amber-500 transition duration-300 font-semibold py-2">
+                        Profile
+                    </a>
+                    <a href="#" class="block text-slate-300 hover:text-amber-500 transition duration-300 font-semibold py-2">
+                        Settings
+                    </a>
+                    <form method="POST"  class="mt-2">
+                        @csrf
+                        <button type="submit" class="w-full text-left text-red-400 hover:text-red-300 transition duration-300 font-semibold py-2">
+                            Logout
+                        </button>
+                    </form>
+                </div>
+            @else
+                <a href="#" class="block bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-2 rounded-lg font-bold transition duration-300 text-center mt-4">
+                    Get Started
+                </a>
+            @endif
+
+
         </div>
     </div>
 </nav>
