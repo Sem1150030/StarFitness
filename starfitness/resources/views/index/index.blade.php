@@ -9,7 +9,7 @@
                 <p class="text-xl sm:text-2xl text-light mb-6">Your Complete Fitness & Nutrition Companion</p>
                 <p class="text-lg text-muted mb-10 max-w-2xl mx-auto">Track your food intake, create personalized fitness plans, and achieve your health goals with our comprehensive platform.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#" class="btn-primary">Get Started</a>
+                    <a href="{{route('auth.register')}}" class="btn-primary">Get Started</a>
                     <a href="#" class="btn-secondary">Learn More</a>
                 </div>
             </div>
@@ -98,7 +98,7 @@
             <h2 class="heading-lg mb-4">Ready to Transform Your Fitness?</h2>
             <p class="text-lg text-light mb-8">Start tracking your fitness journey with StarFitness today.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#" class="btn-primary">Start Free Trial</a>
+                <a href="{{route('auth.register')}}" class="btn-primary">Start Free Trial</a>
                 <a href="#" class="btn-secondary">Contact Us</a>
             </div>
         </div>
