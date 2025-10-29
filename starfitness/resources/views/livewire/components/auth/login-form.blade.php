@@ -5,7 +5,7 @@
         <p class="text-muted">Welcome back to continue your journey</p>
     </div>
 
-    <!-- Register Card -->
+    <!-- Login Card -->
     <div class="card">
         <form wire:submit="login">
             @csrf

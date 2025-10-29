@@ -24,7 +24,7 @@
                     <div class="hidden sm:block relative">
                         <button wire:click="toggleDropdown" class="flex items-center space-x-3 focus:outline-none">
                             <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold cursor-pointer hover:bg-amber-600 transition duration-300">
-                                {{ substr($user->name, 0, 1) }}
+                                {{ mb_substr($user->name, 0, 1) }}
                             </div>
                             <span class="text-white font-semibold">{{ $user->name }}</span>
                             <svg class="w-4 h-4 text-slate-300 transition-transform duration-200 {{ $dropdownOpen ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@
                 <div class="border-t border-slate-700 pt-4 mt-4">
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-slate-900 font-bold">
-                            {{ substr($user->name, 0, 1) }}
+                            {{ mb_substr($user->name, 0, 1) }}
                         </div>
                         <div>
                             <p class="text-white font-semibold">{{ $user->name }}</p>

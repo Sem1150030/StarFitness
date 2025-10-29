@@ -11,8 +11,6 @@ class TopNavigation extends Component
     public $user = null;
     public $dropdownOpen = false;
 
-    protected $listeners = ['userLoggedIn' => '$refresh', 'userLoggedOut' => '$refresh'];
-
     public function mount()
     {
         $this->user = Auth::user();
