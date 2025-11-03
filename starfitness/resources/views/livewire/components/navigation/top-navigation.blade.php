@@ -10,7 +10,7 @@
 
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="/" class="text-slate-300 hover:text-amber-500 transition duration-300 font-semibold">Home</a>
+                <a href="/home/dashboard" class="text-slate-300 hover:text-amber-500 transition duration-300 font-semibold">Home</a>
                 <a href="#" class="text-slate-300 hover:text-amber-500 transition duration-300 font-semibold">Features</a>
                 <a href="#" class="text-slate-300 hover:text-amber-500 transition duration-300 font-semibold">Pricing</a>
                 <a href="#" class="text-slate-300 hover:text-amber-500 transition duration-300 font-semibold">About</a>

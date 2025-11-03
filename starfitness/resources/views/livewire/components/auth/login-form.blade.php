@@ -1,4 +1,4 @@
-<div class="max-w-lg mx-auto">
+<div class="max-w-md mx-auto">
     <!-- Header -->
     <div class="text-center mb-8">
         <h1 class="heading-lg">Login To Your Account</h1>
