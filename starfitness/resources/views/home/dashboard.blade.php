@@ -62,9 +62,9 @@
             <div class="card">
                 <h2 class="heading-md mb-6">Quick Actions</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <button class="btn-primary">
+                    <a class="btn-primary cursor-pointer" href="{{route('meals.index')}}">
                         Log Meal
-                    </button>
+                    </a>
                     <button class="btn-secondary">
                         Start Workout
                     </button>

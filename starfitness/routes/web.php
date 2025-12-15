@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MealController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,4 +14,5 @@ Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::middleware(['ensure.auth'])->group(function () {
     Route::get('home/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    Route::get('home/meals', [MealController::class, 'index'])->name('meals.index');
 });

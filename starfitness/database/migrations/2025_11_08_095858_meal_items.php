@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('meal_items', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('meal_id');
-            $table->integer('portions')->default(0);
-            
+            $table->string('name');
+            $table->string('image_url')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('kcal_per_portion')->default(0);
+            $table->integer('carb_per_portion')->default(0);
+            $table->integer('fat_per_portion')->default(0);
+            $table->integer('protein_per_portion')->default(0);
+
             $table->timestamps();
         });
     }
