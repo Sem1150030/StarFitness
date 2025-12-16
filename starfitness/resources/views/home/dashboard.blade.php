@@ -17,7 +17,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-muted text-sm mb-1">Today's Calories</p>
-                            <h3 class="heading-md mb-0">0 / 2000</h3>
+                            <h3 class="heading-md mb-0">{{$dailyLog->totalKcal}} / {{$dailyLog->goal->kcal_goal}}</h3>
                         </div>
                         <div class="icon-circle-sm bg-gradient-to-br from-green-500 to-emerald-600">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

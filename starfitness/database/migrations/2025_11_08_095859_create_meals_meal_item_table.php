@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('meal_meal_item', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('meal_id');
-            $table->unsignedBigInteger('meal_item_id');
-            $table->integer('portions')->default(0);
-
-            $table->foreign('meal_id')->references('id')->on('meals')->onDelete('cascade');
-            $table->foreign('meal_item_id')->references('id')->on('meal_items')->onDelete('cascade');
+            $table->foreignId('meal_id')->constrained()->onDelete('cascade');
+            $table->foreignId('meal_item_id')->constrained()->onDelete('cascade');
+            $table->decimal('portions', 8, 2)->default(1.0);
 
             $table->timestamps();
+
+            // Prevent duplicate meal-item combinations
+            $table->unique(['meal_id', 'meal_item_id']);
         });
     }
 

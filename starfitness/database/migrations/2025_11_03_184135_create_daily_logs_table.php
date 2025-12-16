@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('daily_logs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('goal_id');
-            $table->float('kcal_total')->nullable();
-            $table->float('protein_total')->nullable();
-            $table->float('carbs_total')->nullable();
-            $table->float('fat_total')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('goal_id')->constrained()->onDelete('cascade');
+            $table->date('date');
             $table->timestamps();
+
+            // Ensure only one log per user per day
+            $table->unique(['user_id', 'date']);
+
+            // Index for date queries
+            $table->index('date');
         });
     }
 

@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('goals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
 
             $table->integer('kcal_goal')->nullable();
-            $table->float('protein_goal')->nullable();
-            $table->float('carbs_goal')->nullable();
-            $table->float('fat_goal')->nullable();
+            $table->integer('protein_goal')->nullable();
+            $table->integer('carbs_goal')->nullable();
+            $table->integer('fat_goal')->nullable();
 
             $table->boolean('is_kcal_max')->default(true);
             $table->boolean('is_carbs_max')->default(false);
@@ -27,6 +28,9 @@ return new class extends Migration
             $table->boolean('is_active')->default(false);
 
             $table->timestamps();
+
+            // Index for finding active goals
+            $table->index(['user_id', 'is_active']);
         });
     }
 

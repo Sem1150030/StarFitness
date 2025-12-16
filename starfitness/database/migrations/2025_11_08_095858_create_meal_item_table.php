@@ -16,12 +16,15 @@ return new class extends Migration
             $table->string('name');
             $table->string('image_url')->nullable();
             $table->text('description')->nullable();
-            $table->integer('kcal_per_portion')->default(0);
-            $table->integer('carb_per_portion')->default(0);
-            $table->integer('fat_per_portion')->default(0);
-            $table->integer('protein_per_portion')->default(0);
+            $table->decimal('kcal_per_portion', 8, 2)->default(0);
+            $table->decimal('carb_per_portion', 8, 2)->default(0);
+            $table->decimal('fat_per_portion', 8, 2)->default(0);
+            $table->decimal('protein_per_portion', 8, 2)->default(0);
 
             $table->timestamps();
+
+            // Index for name searches
+            $table->index('name');
         });
     }
 

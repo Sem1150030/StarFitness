@@ -18,6 +18,8 @@ class AuthService
 
             Auth::login($user);
 
+
+
             return redirect('/')->with('success', 'Welcome ' . $user->name);
         }
         catch (\Exception $exception){

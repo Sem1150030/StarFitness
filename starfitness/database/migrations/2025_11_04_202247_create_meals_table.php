@@ -14,17 +14,19 @@ return new class extends Migration
         Schema::create('meals', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('daily_log_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('daily_log_id')->constrained()->onDelete('cascade');
 
             $table->string('name');
-            $table->integer('kcal_total')->default(0);
-            $table->integer('carb_total')->default(0);
-            $table->integer('fat_total')->default(0);
-            $table->integer('protein_total')->default(0);
-
+            $table->decimal('kcal_total', 10, 2)->default(0);
+            $table->decimal('carb_total', 10, 2)->default(0);
+            $table->decimal('fat_total', 10, 2)->default(0);
+            $table->decimal('protein_total', 10, 2)->default(0);
 
             $table->timestamps();
+
+            // Indexes for common queries
+            $table->index(['user_id', 'daily_log_id']);
         });
     }
 

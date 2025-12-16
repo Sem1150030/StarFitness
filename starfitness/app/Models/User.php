@@ -45,4 +45,36 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the daily logs for the user.
+     */
+    public function dailyLogs()
+    {
+        return $this->hasMany(DailyLog::class);
+    }
+
+    /**
+     * Get the goals for the user.
+     */
+    public function goals()
+    {
+        return $this->hasMany(Goal::class);
+    }
+
+    /**
+     * Get the active goal for the user.
+     */
+    public function activeGoal()
+    {
+        return $this->hasOne(Goal::class)->where('is_active', true);
+    }
+
+    /**
+     * Get the meals for the user.
+     */
+    public function meals()
+    {
+        return $this->hasMany(Meal::class);
+    }
 }
