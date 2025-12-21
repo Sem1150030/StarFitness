@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\DailyLog;
+use Illuminate\Container\Attributes\CurrentUser;
 use Illuminate\Http\Request;
 
 class HomeController
 {
     public function dashboard(){
-
         $dailyLog = DailyLog::query()
-            ->with(['meals', 'goal'])
+            ->with(['meals.mealItems', 'goal'])
             ->today(auth()->user())
             ->first();
 

@@ -29,7 +29,9 @@
                     </div>
                     <h3 class="heading-md mb-2">{{$dailyLog->totalKcal}} / {{$dailyLog->goal->kcal_goal}}</h3>
                     <div class="w-full bg-slate-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-orange-500 to-red-600 h-2 rounded-full" style="width: {{($dailyLog->totalKcal / $dailyLog->goal->kcal_goal) * 100}}%"></div>
+                        <div class="bg-gradient-to-r from-orange-500 to-red-600 h-2 rounded-full"
+                             style=" width: {{($dailyLog->totalKcal / $dailyLog->goal->kcal_goal) * 100}}%; max-width: 100%;"
+                            ></div>
                     </div>
                 </div>
 
@@ -45,7 +47,7 @@
                     </div>
                     <h3 class="heading-md mb-2">{{$dailyLog->totalProtein}}g / {{$dailyLog->goal->protein_goal}}g</h3>
                     <div class="w-full bg-slate-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-red-500 to-pink-600 h-2 rounded-full" style="width: {{($dailyLog->totalProtein / $dailyLog->goal->protein_goal) * 100}}%"></div>
+                        <div class="bg-gradient-to-r from-red-500 to-pink-600 h-2 rounded-full" style="width: {{($dailyLog->totalProtein / $dailyLog->goal->protein_goal) * 100}}%; max-width: 100%;"></div>
                     </div>
                 </div>
 
@@ -63,7 +65,7 @@
                     <div class="w-full bg-slate-700 rounded-full h-2">
                         <div
                             class="bg-gradient-to-r from-blue-500 to-cyan-600 h-2 rounded-full"
-                            style="width: {{($dailyLog->totalCarb / $dailyLog->goal->carbs_goal) * 100}}%">
+                            style="width: {{($dailyLog->totalCarb / $dailyLog->goal->carbs_goal) * 100}}%; max-width: 100%;">
                         </div>
                     </div>
                 </div>
@@ -80,7 +82,7 @@
                     </div>
                     <h3 class="heading-md mb-2">{{$dailyLog->totalFat}}g / {{$dailyLog->goal->fat_goal}}g</h3>
                     <div class="w-full bg-slate-700 rounded-full h-2">
-                        <div class="bg-gradient-to-r from-yellow-500 to-amber-600 h-2 rounded-full" style="width: {{($dailyLog->totalFat / $dailyLog->goal->fat_goal) * 100}}%"></div>
+                        <div class="bg-gradient-to-r from-yellow-500 to-amber-600 h-2 rounded-full" style="width: {{($dailyLog->totalFat / $dailyLog->goal->fat_goal) * 100}}%; max-width: 100%;"></div>
                     </div>
                 </div>
             </div>
@@ -88,7 +90,7 @@
     </section>
 
     <!-- Meals List Section -->
-    @livewire('components.meals.meal-overview', ['dailyLog' => $dailyLog])
+    @livewire('components.meals.meal-overview', ['log' => $dailyLog])
 
     <!-- Meal History Section -->
     <section class="section-dark">

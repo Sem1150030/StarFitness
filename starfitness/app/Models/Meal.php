@@ -21,10 +21,10 @@ class Meal extends Model
     ];
 
     protected $casts = [
-        'kcal_total' => 'decimal:2',
-        'carb_total' => 'decimal:2',
-        'fat_total' => 'decimal:2',
-        'protein_total' => 'decimal:2',
+        'kcal_total' => 'integer',
+        'carb_total' => 'integer',
+        'fat_total' => 'integer',
+        'protein_total' => 'integer',
     ];
 
     public function user()

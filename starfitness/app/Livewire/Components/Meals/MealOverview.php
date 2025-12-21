@@ -12,6 +12,10 @@ class MealOverview extends Component
 
     public DailyLog $log;
 
+    public function mount(DailyLog $log){
+
+    }
+
     public function render()
     {
         return view('livewire.components.meals.meal-overview');

@@ -45,22 +45,22 @@ class DailyLog extends Model
 
     public function getTotalKcalAttribute()
     {
-        return $this->meals->sum('kcal_total');
+        return $this->meals->sum('kcal_total') ?? 0;
     }
 
     public function getTotalCarbAttribute()
     {
-        return $this->meals->sum('carb_total');
+        return $this->meals->sum('carb_total') ?? 0;
 }
 
     public function getTotalProteinAttribute()
     {
-        return $this->meals->sum('protein_total');
+        return $this->meals->sum('protein_total') ?? 0;
     }
 
     public function getTotalFatAttribute()
     {
-        return $this->meals->sum('fat_total');
+        return $this->meals->sum('fat_total') ?? 0;
     }
 
     public function scopeToday(Builder $query, User $user){
