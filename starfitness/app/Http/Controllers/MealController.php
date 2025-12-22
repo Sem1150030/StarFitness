@@ -17,4 +17,8 @@ class MealController
             'dailyLog' => $dailyLog
         ]);
     }
+
+    public function create(){
+        return view('home/meals/create', []);
+    }
 }
