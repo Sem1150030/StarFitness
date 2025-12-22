@@ -49,5 +49,6 @@
 
         <livewire:components.navigation.top-navigation />
         @yield('content')
+    <livewire:wire-elements-modal />
     </body>
 </html>
