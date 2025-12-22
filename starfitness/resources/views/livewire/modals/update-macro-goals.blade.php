@@ -13,9 +13,23 @@
                 type="number"
                 id="kcal_goal"
                 wire:model="kcal_goal"
-                class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                class="@error('kcal_goal') border-red-500 @enderror
+                w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 "
                 placeholder="e.g., 2000"
             >
+            @error('kcal_goal')
+                <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+            @enderror
+            <div class="mt-2">
+                <label class="inline-flex items-center cursor-pointer">
+                    <input
+                        type="checkbox"
+                        wire:model="is_kcal_max"
+                        class="form-checkbox h-5 w-5 text-amber-500 bg-slate-700 border-slate-600 rounded focus:ring-amber-500 focus:ring-2"
+                    >
+                    <span class="ml-2 text-sm text-slate-300">This is a maximum goal</span>
+                </label>
+            </div>
         </div>
 
         <div class="mb-4">
@@ -26,9 +40,12 @@
                 type="number"
                 id="protein_goal"
                 wire:model="protein_goal"
-                class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 @error('protein_goal') border-red-500 @enderror"
                 placeholder="e.g., 150"
             >
+            @error('protein_goal')
+                <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="mb-4">
@@ -39,9 +56,22 @@
                 type="number"
                 id="carbs_goal"
                 wire:model="carbs_goal"
-                class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 @error('carbs_goal') border-red-500 @enderror"
                 placeholder="e.g., 200"
             >
+            @error('carbs_goal')
+                <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+            @enderror
+            <div class="mt-2">
+                <label class="inline-flex items-center cursor-pointer">
+                    <input
+                        type="checkbox"
+                        wire:model="is_carbs_max"
+                        class="form-checkbox h-5 w-5 text-amber-500 bg-slate-700 border-slate-600 rounded focus:ring-amber-500 focus:ring-2"
+                    >
+                    <span class="ml-2 text-sm text-slate-300">This is a maximum goal</span>
+                </label>
+            </div>
         </div>
 
         <div class="mb-6">
@@ -52,9 +82,22 @@
                 type="number"
                 id="fat_goal"
                 wire:model="fat_goal"
-                class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                class="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 @error('fat_goal') border-red-500 @enderror"
                 placeholder="e.g., 70"
             >
+            @error('fat_goal')
+                <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+            @enderror
+            <div class="mt-2">
+                <label class="inline-flex items-center cursor-pointer">
+                    <input
+                        type="checkbox"
+                        wire:model="is_fat_max"
+                        class="form-checkbox h-5 w-5 text-amber-500 bg-slate-700 border-slate-600 rounded focus:ring-amber-500 focus:ring-2"
+                    >
+                    <span class="ml-2 text-sm text-slate-300">This is a maximum goal</span>
+                </label>
+            </div>
         </div>
 
         <div class="flex justify-end space-x-3">

@@ -31,6 +31,7 @@
                         x-transition:leave="transition ease-in duration-300"
                         x-transition:leave-start="opacity-100"
                         x-transition:leave-end="opacity-0"
+
                         class="{{ $data['color'] }} px-6 py-4 rounded-lg shadow-lg flex items-center space-x-3 min-w-[300px]"
                     >
                         <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
