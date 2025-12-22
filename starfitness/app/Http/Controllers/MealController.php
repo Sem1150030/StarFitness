@@ -21,4 +21,14 @@ class MealController
     public function create(){
         return view('home/meals/create', []);
     }
+
+    public function store(Request $request){
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'kcal_total' => 'required|integer|min:0',
+            'protein_total' => 'required|integer|min:0',
+            'carbs_total' => 'required|integer|min:0',
+            'fat_total' => 'required|integer|min:0',
+        ]);
+    }
 }

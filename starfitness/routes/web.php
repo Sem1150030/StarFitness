@@ -18,4 +18,5 @@ Route::middleware(['ensure.auth'])->group(function () {
     //meals
     Route::get('home/meals', [MealController::class, 'index'])->name('meals.index');
     Route::get('home/meals/create', [MealController::class, 'create'])->name('meals.create');
+    Route::post('home/meals/create', [MealController::class, 'store'])->name('meals.store');
 });

@@ -18,6 +18,7 @@ class DailyLog extends Model
         'protein_total',
         'carbs_total',
         'fat_total',
+        'name',
     ];
 
     protected $casts = [

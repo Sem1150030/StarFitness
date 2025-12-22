@@ -21,9 +21,9 @@
                         </svg>
                         <span>Update Goals</span>
                     </button>
-                    <a class="btn-primary" href="{{ route('meals.create') }}">
+                    <button class="btn-primary" onclick="Livewire.dispatch('openModal', { component: 'modals.create-meal', arguments: {log: {{$dailyLog}}} })">
                         + Log Meal
-                    </a>
+                    </button>
                 </div>
             </div>
 
